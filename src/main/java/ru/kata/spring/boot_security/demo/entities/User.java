@@ -26,7 +26,7 @@ public class User implements UserDetails {
 
     private int age;
 
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     @JoinTable(name = "users_roles",
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -40,7 +40,8 @@ public class User implements UserDetails {
         this.roles = roles;
     }
 
-    public User() { }
+    public User() {
+    }
 
     public User(String username, String password) {
         this.username = username;

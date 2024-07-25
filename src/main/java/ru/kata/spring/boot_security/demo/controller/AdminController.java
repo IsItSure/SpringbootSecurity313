@@ -21,12 +21,12 @@ public class AdminController {
     private final RoleRepository roleRepository;
 
     @Autowired
-    AdminController(UserService userServiceImpl, RoleRepository roleRepository) {
+    public AdminController(UserService userServiceImpl, RoleRepository roleRepository) {
         this.userServiceImpl = userServiceImpl;
         this.roleRepository = roleRepository;
     }
 
-    @GetMapping("/" )
+    @GetMapping("/")
     public String userList(Model model) {
         List<User> users = userServiceImpl.getUsers();
         model.addAttribute("users", users);
@@ -34,7 +34,7 @@ public class AdminController {
     }
 
     @GetMapping("/userForm")
-    public String userForm(@RequestParam(value="id", required = false) Long id, Model model) {
+    public String userForm(@RequestParam(value = "id", required = false) Long id, Model model) {
         User user;
         if (id == null) {
             user = new User();
