@@ -25,9 +25,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    //login : password
-    //user : 100
-    //admin : 200
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
