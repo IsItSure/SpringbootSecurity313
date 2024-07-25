@@ -1,4 +1,4 @@
-package ru.kata.spring.boot_security.demo.DataInit;
+package ru.kata.spring.boot_security.demo.dataInit;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
